@@ -1,0 +1,79 @@
+/* ==========================
+   RESOURCE PAGE STYLES
+   ========================== */
+
+.resource-content {
+    padding: 30px 0;
+}
+
+.resource-content h2 {
+    color: var(--blue-900);
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+
+.resource-content .subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.resource-category {
+    margin-bottom: 50px;
+    padding: 20px 0;
+    border-top: 1px solid var(--beige-200);
+}
+
+.resource-category h3 {
+    color: var(--blue-700);
+    font-size: 1.5em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.resource-category p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+/* Grid layout for the resource cards */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.resource-card {
+    background: white;
+    padding: 20px;
+    border-left: 5px solid var(--blue-500);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resource-card h4 {
+    color: var(--blue-900);
+    margin-bottom: 8px;
+    font-size: 1.25em;
+}
+
+.resource-card p {
+    font-size: 0.95em;
+    color: #4a5568; /* Slightly darker muted text for readability */
+    flex-grow: 1; /* Ensures p fills space before links */
+}
+
+.resource-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Small button styling for resource links */
+.resource-links .btn-outline {
+    font-size: 0.85em;
+    padding: 6px 12px;
+}

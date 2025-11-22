@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Firewall of Wisdom</title>
+  <link rel="icon" type="image/x-ico" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/interactive.css">
+  <link rel="stylesheet" href="css/from.css"> 
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <div class="brand">
+        <a class="logo image-logo" href="index.html">
+          <img src="images/logo.svg" alt="Firewall of Wisdom Logo">
+        </a>
+        <div class="title">
+          <h1>Firewall of Wisdom</h1>
+          <p>Digital Literacy & Cyber Safety</p>
+        </div>
+      </div>
+      <nav>
+        <a href="lessons/privacy.html">Lessons</a>
+        <a href="form.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <div class="form-container">
+      <h2>Get in Touch</h2>
+      <p class="subtitle">Have questions about digital safety? We're here to help.</p>
+
+      <form class="form-grid">
+        
+        <div class="form-group span-2">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-group span-2">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="example@gmail.com" required />
+        </div>
+
+        <div class="form-group span-2">
+          <label for="type">Inquiry Type</label>
+          <select id="type" required>
+            <option value="">Select one</option>
+            <option>General Question</option>
+            <option>Feedback</option>
+            <option>Technical Issue</option>
+          </select>
+        </div>
+
+        <div class="form-group span-4">
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Write something..."></textarea>
+        </div>
+
+        <button class="btn btn-primary span-4" type="submit">Send Message</button>
+      </form>
+
+      <div class="info-box">
+        <p><strong>Tip:</strong> Never share your password or social security number in contact forms. We will never ask for them.</p>
+      </div>
+    </div>
+
+    <footer>
+      <small>© <span id="year"></span> Firewall of Wisdom</small>
+      <span>Built for Learners • Privacy-first • Open Resources</span>
+    </footer>
+
+  </div>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

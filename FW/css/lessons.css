@@ -1,0 +1,321 @@
+/* ==========================
+   LESSON DIRECTORY STYLES
+   ========================== */
+.lesson-directory {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.lesson-directory .subtitle {
+  color: var(--muted); /* Uses variable from main.css */
+  margin-bottom: 30px;
+}
+
+/* GRID LAYOUT for the three cards */
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px;
+  text-align: left;
+}
+
+.lesson-card h3 {
+  color: var(--blue-700); /* Uses variable from main.css */
+  margin-bottom: 12px;
+}
+
+.lesson-card a.btn {
+  margin-top: 20px;
+  display: inline-block;
+  width: 100%; /* Make the button fill the card width */
+}
+
+/* ==========================
+   LESSON CONTENT STYLES (User's existing code)
+   ========================== */
+.lesson-content { 
+  display:grid; 
+  grid-template-columns:250px 1fr; 
+  gap:28px; 
+  margin-top:28px; 
+}
+.lesson-sidebar { 
+  background: rgba(255,255,255,0.85); 
+  padding:20px; 
+  border-radius:14px; 
+  box-shadow:var(--shadow); 
+  position:sticky; 
+  top:40px; 
+}
+.lesson-main { 
+  opacity:0; 
+  transform:translateY(20px); 
+  animation: mainContentIn 0.6s forwards; 
+  animation-delay:0.2s; 
+}
+.lesson-section { 
+  background: rgba(255,255,255,0.85); 
+  padding:24px; 
+  border-radius:14px; 
+  box-shadow:var(--shadow); 
+  margin-bottom:24px; 
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s; 
+}
+.lesson-section:hover { 
+  transform: translateY(-6px) scale(1.02); 
+  box-shadow: 0 12px 24px rgba(11,59,102,0.25); 
+}
+.diagram-placeholder { 
+  background: var(--beige-200); 
+  border:2px dashed var(--blue-500); 
+  height:150px; 
+  margin-top:16px; 
+  border-radius:14px; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  color: var(--blue-900); 
+  font-weight:600; 
+}
+
+/* Section fade-in staggered */
+.lesson-section:nth-child(1) { animation: fadeInUp 0.6s forwards; animation-delay:0.2s; }
+.lesson-section:nth-child(2) { animation: fadeInUp 0.6s forwards; animation-delay:0.4s; }
+.lesson-section:nth-child(3) { animation: fadeInUp 0.6s forwards; animation-delay:0.6s; }
+.lesson-section:nth-child(4) { animation: fadeInUp 0.6s forwards; animation-delay:0.8s; }
+.lesson-section:nth-child(5) { animation: fadeInUp 0.6s forwards; animation-delay:1.0s; }
+.lesson-section:nth-child(6) { animation: fadeInUp 0.6s forwards; animation-delay:1.2s; }
+
+/* ==========================
+   ANIMATIONS
+   ========================== */
+@keyframes mainContentIn { 
+  to { 
+    opacity:1; 
+    transform:translateY(0); 
+  } 
+}
+@keyframes fadeInUp { 
+  to { 
+    opacity:1; 
+    transform:translateY(0); 
+  } 
+}
+
+
+/* ==========================
+   RESPONSIVE LAYOUT
+   ========================== */
+@media(max-width: 980px) {
+  /* Directory: Collapse to two columns on tablets */
+  .lesson-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  /* Lesson Content: Sidebar stacks on top of main content */
+  .lesson-content {
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+  .lesson-sidebar {
+      position: relative;
+      top: 0;
+  }
+}
+
+@media(max-width: 640px) {
+  /* Directory: Collapse to one column on mobile */
+  .lesson-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- FIXES FOR TEXT LAYOUT AND SPACING --- */
+
+/* Ensures all text elements inside the main lesson content have good spacing */
+.lesson-section h2 {
+    color: var(--blue-900);
+    margin-bottom: 12px;
+}
+.lesson-section h3 {
+    color: var(--blue-700);
+    margin-top: 25px; /* Adds space above subheadings */
+    margin-bottom: 10px;
+    font-size: 1.25em;
+}
+.lesson-section p {
+    margin-bottom: 15px;
+    line-height: 1.65; /* Improves readability of large text blocks */
+}
+.lesson-section ul, .lesson-section ol {
+    padding-left: 25px; 
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+.lesson-section li {
+    margin-bottom: 8px; /* Space between list items */
+}
+
+/* Sidebar List Styling for Table of Contents */
+.lesson-sidebar ul {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+}
+.lesson-sidebar ul li {
+    margin-bottom: 5px;
+}
+.lesson-sidebar ul li a {
+    text-decoration: none;
+    color: var(--blue-700);
+    display: block;
+    padding: 4px 8px; /* A bit of padding for easier clicking */
+    border-radius: 6px;
+    transition: background 0.2s;
+    font-weight: 500;
+}
+.lesson-sidebar ul li a:hover {
+    background: var(--beige-200);
+}
+
+
+/* --- TIP BOX PLACEMENT FIX --- */
+
+/* Overrides the sticky positioning from interactive.css. 
+   The tip box will now just be the first element inside the sticky sidebar. */
+.lesson-sidebar .tip-box {
+    position: relative !important;
+    top: 0 !important;
+    margin-bottom: 25px; /* Increase space below the tip box */
+}
+
+/* Adds a bit of padding to the lesson buttons div */
+.lesson-buttons {
+    padding: 10px 0;
+}
+
+/* ==========================
+   LESSON CONTENT VARIATION STYLES
+   ========================== */
+.lesson-page-header {
+  background: var(--blue-700);
+  color: white;
+  padding: 30px 40px;
+  border-radius: var(--radius);
+  margin-top: 20px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+.lesson-page-header h2 {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+.lesson-page-header p {
+  opacity: 0.9;
+  font-size: 1.1em;
+}
+
+/* Ensure lesson content starts below this new header */
+.lesson-content {
+    /* Existing lesson-content styles remain here */
+    margin-top: 0; 
+}
+
+/* ==========================
+   PHISHING CHALLENGE STYLES
+   ========================== */
+.phishing-challenge {
+    margin: 20px 0;
+    border: 1px solid var(--beige-200);
+    border-radius: var(--radius);
+    background: white;
+}
+
+.simulated-email {
+    padding: 15px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.simulated-email p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.link-options {
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.challenge-link {
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-grow: 1;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Style for the phishing link (Red) */
+.bad-link {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+}
+.bad-link:hover {
+    background: #a30000;
+    color: white;
+}
+
+/* Style for the safe link (Green) */
+.good-link {
+    background: #d4edc8;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+.good-link:hover {
+    background: #155724;
+    color: white;
+}
+
+
+/* --- HOVER-TO-REVEAL TRICK --- */
+
+/* Overrides tip-box for this section */
+.phishing-reveal {
+    cursor: pointer;
+    background: var(--beige-200) !important;
+    color: var(--blue-900) !important;
+    text-align: center;
+    border: 2px solid var(--blue-500);
+    margin: 15px; /* Spacing inside the challenge card */
+}
+
+.phishing-reveal .reveal-content {
+    max-height: 0; /* Hides content */
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease;
+    padding-top: 0;
+}
+
+.phishing-reveal:hover .reveal-content {
+    max-height: 200px; /* Reveals content on hover */
+    opacity: 1;
+    padding-top: 10px;
+    border-top: 1px solid var(--blue-500);
+    margin-top: 10px;
+}
+
+.phishing-reveal .reveal-content p {
+    text-align: left;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.phishing-reveal .bad-feedback { color: #a30000; font-weight: 700; }
+.phishing-reveal .good-feedback { color: #155724; font-weight: 700; }

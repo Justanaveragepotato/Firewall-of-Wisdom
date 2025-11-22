@@ -1,0 +1,12 @@
+/* Floating Background Animation */
+body { background-size:200% 200%; animation: bgmove 15s ease-in-out infinite alternate; }
+@keyframes bgmove { 0%{background-position:0% 50%} 50%{background-position:50% 50%} 100%{background-position:100% 50%} }
+
+/* Diagram hover highlight */
+.diagram-placeholder:hover { border-color: var(--blue-700); box-shadow:0 8px 20px rgba(11,59,102,0.3); transform:scale(1.02); transition: all 0.3s ease; }
+
+/* Sticky Tip Box */
+.tip-box { position:sticky; top:100px; background: var(--blue-700); color:white; padding:12px 16px; border-radius:14px; box-shadow:var(--shadow); margin-bottom:20px; font-size:14px; }
+
+/* Hover animations for cards */
+.card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 24px rgba(11,59,102,0.25); transition: transform 0.3s, box-shadow 0.3s; }
